@@ -290,9 +290,9 @@ contract PizzaParlor is async {
 
     //add a main method
     function run() {
-        onTransferStack(0x5FbDB2315678afecb367f032d93F642f64180aa3, 1, 2, 3, 4, 5, 1);
+        onTransferStack(cryptogsAddress, 1, 2, 3, 4, 5, 1);
         wait();
-        onTransferStack(0x5FbDB2315678afecb367f032d93F642f64180aa3, 6, 7, 8, 9, 10, 2);
+        onTransferStack(cryptogsAddress, 6, 7, 8, 9, 10, 2);
 //        wait();
 //        generateGame(0x3132,0x3132,0x583031D1113aD414F02576BD6afaBfb302140225,1, 2, 3, 4, 5,6, 7, 8, 9, 10);
         finish();

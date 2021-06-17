@@ -40,7 +40,7 @@ describe("Cryptogs", function() {
         "0x0000000000000000000000000000000000000000000000000000000000000001");
     const transferResult = await transfer.wait();
     const eventArray = transferResult.events.map(e => {
-      return e.event
+      return new Object({event:e.eventSignature, data:e.data})
     })
     console.log(eventArray);
   });
@@ -72,10 +72,10 @@ describe("PizzaParlor", function() {
         "5",
         "0x0000000000000000000000000000000000000000000000000000000000000001");
 
-    const pizzaParlorMain = await pizzaparlor.run();
+    const pizzaParlorMain = await pizzaparlor.onTransferStack(cryptogs.address, 1, 2, 3, 4, 5, 1);
     const result = await pizzaParlorMain.wait();
     const eventResultArray = result.events.map(e => {
-      return e.event
+      return new Object({event:e.event, data:e.data})
     })
     console.log(eventResultArray);
   });
